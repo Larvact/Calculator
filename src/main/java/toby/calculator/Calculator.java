@@ -1,10 +1,12 @@
 package toby.calculator;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class Calculator extends Application
 {
@@ -14,12 +16,9 @@ public class Calculator extends Application
     }
 
     @Override
-    public void start(final Stage stage)
+    public void start(final Stage stage) throws IOException
     {
-        final var button = new Button("1");
-        final var root= new StackPane();
-        root.getChildren().add(button);
-        final var scene = new Scene(root);
+        Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/display/calculator.fxml"))));
         stage.setScene(scene);
         stage.setTitle("Calculator");
         stage.show();
