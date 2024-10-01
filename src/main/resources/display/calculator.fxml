@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.control.Button?>
-
-<AnchorPane minHeight="600" minWidth="600" fx:controller="toby.calculator.display.NumberButton" fx:id="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
-    <Button text="Change Color" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"/>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="600"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox>
+            <padding>
+                <Insets left="%standardPadding" top="%standardPadding"/>
+            </padding>
+            <fx:include source="buttons/calculatorTypeSwitchButton.fxml"/>
+        </HBox>
+    </top>
+</BorderPane>
