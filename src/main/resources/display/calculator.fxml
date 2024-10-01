@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane minHeight="600" minWidth="600" fx:controller="toby.calculator.display.NumberButton" fx:id="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+    <Button text="Change Color" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"/>
+</AnchorPane>
