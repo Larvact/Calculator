@@ -5,7 +5,8 @@ module Calculator
     requires javafx.fxml;
     requires org.apache.logging.log4j;
 
-    opens toby.calculator.display to javafx.fxml;
-    exports toby.calculator.display;
+    opens toby.calculator.display.header to javafx.fxml;
     exports toby.calculator;
+    exports toby.calculator.display.header;
+
 }
