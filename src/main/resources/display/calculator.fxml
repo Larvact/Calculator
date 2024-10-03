@@ -7,11 +7,12 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="600"
             xmlns:fx="http://javafx.com/fxml/1">
     <top>
-        <HBox>
+        <HBox spacing="%standardSpacing">
             <padding>
-                <Insets left="%standardPadding" top="%standardPadding"/>
+                <Insets left="%standardSpacing" top="%standardSpacing"/>
             </padding>
-            <fx:include source="buttons/calculatorTypeSwitchButton.fxml"/>
+            <fx:include source="header/buttons/calculatorTypeSwitchButton.fxml"/>
+            <fx:include source="header/buttons/copyButton.fxml"/>
         </HBox>
     </top>
 </BorderPane>
