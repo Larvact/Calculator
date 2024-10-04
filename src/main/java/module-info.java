@@ -7,10 +7,11 @@ module Calculator
 
     opens toby.calculator.display.header to javafx.fxml;
     opens toby.calculator.display.body to javafx.fxml;
+    opens toby.calculator.display.body.inputlinepad to javafx.fxml;
     opens toby.calculator.display.body.numberpad to javafx.fxml;
+    opens toby.calculator.display.body.operationpad to javafx.fxml;
+
     exports toby.calculator;
     exports toby.calculator.display.header;
     exports toby.calculator.display.body;
-    exports toby.calculator.display.body.numberpad;
-
 }

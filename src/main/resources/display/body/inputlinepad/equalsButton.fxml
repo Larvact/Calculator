@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+
+<Button xmlns:fx="http://javafx.com/fxml/1" fx:id="equalsButton" fx:controller="toby.calculator.display.body.inputlinepad.InputLinePadEqualsButton"
+        onAction="#calculate" prefHeight="%standardButtonSize" prefWidth="%standardButtonSize"/>
