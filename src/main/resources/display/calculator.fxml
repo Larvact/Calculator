@@ -26,6 +26,9 @@
                 </padding>
                 <fx:include source="body/calculatorInputLine.fxml"/>
             </HBox>
+            <HBox>
+
+            </HBox>
             <FlowPane maxWidth="-Infinity" minWidth="600" hgap="%standardSpacing" vgap="%standardSpacing"
                       alignment="BASELINE_LEFT" orientation="VERTICAL">
                 <padding>
@@ -42,6 +45,11 @@
                 <fx:include source="body/numberpad/nineButton.fxml"/>
                 <fx:include source="body/numberpad/sixButton.fxml"/>
                 <fx:include source="body/numberpad/threeButton.fxml"/>
+                <fx:include source="body/inputlinepad/equalsButton.fxml"/>
+                <fx:include source="body/operationpad/divideButton.fxml"/>
+                <fx:include source="body/operationpad/multiplyButton.fxml"/>
+                <fx:include source="body/operationpad/subtractButton.fxml"/>
+                <fx:include source="body/operationpad/addButton.fxml"/>
             </FlowPane>
         </VBox>
     </center>
