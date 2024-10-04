@@ -4,7 +4,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.HBox?>
 
-<?import com.sun.javafx.scene.control.ContextMenuContent.MenuBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="600"
             xmlns:fx="http://javafx.com/fxml/1">
     <top>
@@ -17,11 +19,30 @@
         </HBox>
     </top>
     <center>
-        <HBox alignment="BASELINE_CENTER">
-            <padding>
-                <Insets top="%standardSpacing"/>
-            </padding>
-            <fx:include source="body/calculatorInputLine.fxml"/>
-        </HBox>
+        <VBox>
+            <HBox alignment="BASELINE_CENTER">
+                <padding>
+                    <Insets top="%standardSpacing"/>
+                </padding>
+                <fx:include source="body/calculatorInputLine.fxml"/>
+            </HBox>
+            <FlowPane maxWidth="-Infinity" minWidth="600" hgap="%standardSpacing" vgap="%standardSpacing"
+                      alignment="BASELINE_LEFT" orientation="VERTICAL">
+                <padding>
+                    <Insets top="%standardSpacing" left="50"/>
+                </padding>
+                <fx:include source="body/numberpad/sevenButton.fxml"/>
+                <fx:include source="body/numberpad/fourButton.fxml"/>
+                <fx:include source="body/numberpad/oneButton.fxml"/>
+                <fx:include source="body/numberpad/zeroButton.fxml"/>
+                <fx:include source="body/numberpad/eightButton.fxml"/>
+                <fx:include source="body/numberpad/fiveButton.fxml"/>
+                <fx:include source="body/numberpad/twoButton.fxml"/>
+                <fx:include source="body/numberpad/dotButton.fxml"/>
+                <fx:include source="body/numberpad/nineButton.fxml"/>
+                <fx:include source="body/numberpad/sixButton.fxml"/>
+                <fx:include source="body/numberpad/threeButton.fxml"/>
+            </FlowPane>
+        </VBox>
     </center>
 </BorderPane>
