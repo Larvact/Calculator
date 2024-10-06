@@ -4,9 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
-import java.util.Objects;
 
 import static toby.calculator.config.CalculatorProperties.CALCULATOR_PROPERTIES;
 import static toby.calculator.config.CalculatorProperties.CALCULATOR_XML_PATH_KEY;
@@ -22,7 +22,12 @@ public class Calculator extends Application
     @Override
     public void start(final Stage stage) throws IOException
     {
-        Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(getClass().getResource(getCalculatorProperty(CALCULATOR_XML_PATH_KEY))), CALCULATOR_PROPERTIES));
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.register(CalculatorApplicationContextConfig.class);
+        context.refresh();
+        final var fmxlLoader = new FXMLLoader(getClass().getResource(getCalculatorProperty(CALCULATOR_XML_PATH_KEY)), CALCULATOR_PROPERTIES);
+        fmxlLoader.setControllerFactory(context::getBean);
+        Scene scene = new Scene(fmxlLoader.load());
         stage.setScene(scene);
         stage.setTitle("Calculator");
         stage.setResizable(false);
