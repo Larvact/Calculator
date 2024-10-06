@@ -4,14 +4,25 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import toby.calculator.display.body.CalculatorInputLine;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+@Component
 public class CopyButton implements Initializable
 {
     @FXML
     private Button copyButton;
+    protected final CalculatorInputLine calculatorInputLine;
+
+    @Autowired
+    public CopyButton(final CalculatorInputLine calculatorInputLine)
+    {
+        this.calculatorInputLine = calculatorInputLine;
+    }
 
     @Override
     public void initialize(final URL url, final ResourceBundle resourceBundle)

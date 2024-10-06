@@ -2,5 +2,5 @@
 
 <?import javafx.scene.control.Button?>
 
-<Button xmlns:fx="http://javafx.com/fxml/1" fx:id="equalsButton" fx:controller="toby.calculator.display.body.inputlinepad.InputLinePadEqualsButton"
-        onAction="#calculate" prefHeight="%standardButtonSize" prefWidth="%standardButtonSize"/>
+<Button xmlns:fx="http://javafx.com/fxml/1" fx:id="button" fx:controller="toby.calculator.display.body.pad.inputlinepad.InputLinePadEqualsButton"
+        onAction="#inputSymbol" prefHeight="%standardButtonSize" prefWidth="%standardButtonSize"/>
