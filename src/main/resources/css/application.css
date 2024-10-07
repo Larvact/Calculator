@@ -1,0 +1,5 @@
+.tooltip
+{
+    -fx-show-duration: 5s;
+    -fx-show-delay: 0ms;
+}

@@ -7,10 +7,9 @@ import javafx.stage.Stage;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
+import java.util.Objects;
 
-import static toby.calculator.config.CalculatorProperties.CALCULATOR_PROPERTIES;
-import static toby.calculator.config.CalculatorProperties.CALCULATOR_XML_PATH_KEY;
-import static toby.calculator.config.CalculatorProperties.getCalculatorProperty;
+import static toby.calculator.config.CalculatorProperties.*;
 
 public class Calculator extends Application
 {
@@ -25,9 +24,10 @@ public class Calculator extends Application
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(CalculatorApplicationContextConfig.class);
         context.refresh();
-        final var fmxlLoader = new FXMLLoader(getClass().getResource(getCalculatorProperty(CALCULATOR_XML_PATH_KEY)), CALCULATOR_PROPERTIES);
-        fmxlLoader.setControllerFactory(context::getBean);
-        Scene scene = new Scene(fmxlLoader.load());
+        final var fxml = new FXMLLoader(getClass().getResource(getCalculatorProperty(CALCULATOR_XML_PATH_KEY)), CALCULATOR_PROPERTIES);
+        fxml.setControllerFactory(context::getBean);
+        Scene scene = new Scene(fxml.load());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource(getCalculatorProperty(APPLICATION_CSS_PATH_KEY))).toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Calculator");
         stage.setResizable(false);
