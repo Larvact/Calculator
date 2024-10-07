@@ -10,6 +10,8 @@ module Calculator
     requires spring.core;
     requires spring.expression;
     requires spring.jcl;
+    requires antlr4;
+    requires org.antlr.antlr4.runtime;
 
     opens toby.calculator to spring.core;
     opens toby.calculator.display.header to javafx.fxml;

@@ -1,7 +1,9 @@
-package toby.calculator.operators;
+package toby.calculator.processing.operators;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import toby.calculator.processing.operators.Divide;
+import toby.calculator.processing.operators.Operator;
 
 import java.math.BigDecimal;
 
