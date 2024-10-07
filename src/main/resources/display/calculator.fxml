@@ -24,7 +24,7 @@
                 <padding>
                     <Insets top="%standardSpacing"/>
                 </padding>
-                <fx:include source="body/calculatorInputLine.fxml"/>
+                <fx:include source="body/expressionpad/expressionLine.fxml"/>
             </HBox>
             <HBox>
 
@@ -45,7 +45,7 @@
                 <fx:include source="body/numberpad/nineButton.fxml"/>
                 <fx:include source="body/numberpad/sixButton.fxml"/>
                 <fx:include source="body/numberpad/threeButton.fxml"/>
-                <fx:include source="body/inputlinepad/equalsButton.fxml"/>
+                <fx:include source="body/expressionpad/equalsButton.fxml"/>
                 <fx:include source="body/operationpad/divideButton.fxml"/>
                 <fx:include source="body/operationpad/multiplyButton.fxml"/>
                 <fx:include source="body/operationpad/subtractButton.fxml"/>

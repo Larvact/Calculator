@@ -6,7 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import toby.calculator.display.body.CalculatorInputLine;
+import toby.calculator.display.body.pad.expressionpad.ExpressionLine;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,12 +16,12 @@ public class CopyButton implements Initializable
 {
     @FXML
     private Button copyButton;
-    protected final CalculatorInputLine calculatorInputLine;
+    protected final ExpressionLine expressionLine;
 
     @Autowired
-    public CopyButton(final CalculatorInputLine calculatorInputLine)
+    public CopyButton(final ExpressionLine expressionLine)
     {
-        this.calculatorInputLine = calculatorInputLine;
+        this.expressionLine = expressionLine;
     }
 
     @Override

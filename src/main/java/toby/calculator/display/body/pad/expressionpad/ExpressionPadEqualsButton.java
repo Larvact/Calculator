@@ -1,11 +1,8 @@
-package toby.calculator.display.body.pad.inputlinepad;
+package toby.calculator.display.body.pad.expressionpad;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import toby.calculator.display.body.CalculatorInputLine;
 import toby.calculator.display.body.pad.CalculatorSymbol;
 import toby.calculator.display.body.pad.PadButton;
 
@@ -13,12 +10,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 @Component
-public class InputLinePadEqualsButton extends PadButton
+public class ExpressionPadEqualsButton extends PadButton
 {
     @Autowired
-    public InputLinePadEqualsButton(final CalculatorInputLine calculatorInputLine)
+    public ExpressionPadEqualsButton(final ExpressionLine expressionLine)
     {
-        super(calculatorInputLine);
+        super(expressionLine);
     }
 
     @Override

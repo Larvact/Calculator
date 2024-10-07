@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.control.TextField?>
-
-<TextField xmlns:fx="http://javafx.com/fxml/1" fx:controller="toby.calculator.display.body.CalculatorInputLine"
-           fx:id="calculatorInputLine" disable="true" prefWidth="500" prefHeight="75"/>
