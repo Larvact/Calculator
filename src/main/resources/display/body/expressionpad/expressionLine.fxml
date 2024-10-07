@@ -3,4 +3,4 @@
 <?import javafx.scene.control.TextField?>
 
 <TextField xmlns:fx="http://javafx.com/fxml/1" fx:controller="toby.calculator.display.body.pad.expressionpad.ExpressionLine"
-           fx:id="expressionLine" disable="true" prefWidth="500" prefHeight="75"/>
+           fx:id="expressionLine" disable="true" prefWidth="500"/>

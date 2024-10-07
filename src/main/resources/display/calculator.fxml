@@ -20,15 +20,17 @@
     </top>
     <center>
         <VBox>
-            <HBox alignment="BASELINE_CENTER">
-                <padding>
-                    <Insets top="%standardSpacing"/>
-                </padding>
-                <fx:include source="body/expressionpad/expressionLine.fxml"/>
-            </HBox>
-            <HBox>
-
-            </HBox>
+            <VBox>
+                <HBox alignment="BASELINE_CENTER">
+                    <padding>
+                        <Insets top="%standardSpacing"/>
+                    </padding>
+                    <fx:include source="body/expressionpad/expressionLine.fxml"/>
+                </HBox>
+                <HBox alignment="BASELINE_CENTER">
+                    <fx:include source="body/expressionpad/resultLine.fxml"/>
+                </HBox>
+            </VBox>
             <FlowPane maxWidth="-Infinity" minWidth="600" hgap="%standardSpacing" vgap="%standardSpacing"
                       alignment="BASELINE_LEFT" orientation="VERTICAL">
                 <padding>
