@@ -13,16 +13,14 @@ module Calculator
 
     opens toby.calculator to spring.core;
     opens toby.calculator.display.header to javafx.fxml;
-    opens toby.calculator.display.body to javafx.fxml;
     opens toby.calculator.display.body.pad to javafx.fxml;
-    opens toby.calculator.display.body.pad.inputlinepad to javafx.fxml;
+    opens toby.calculator.display.body.pad.expressionpad to javafx.fxml;
     opens toby.calculator.display.body.pad.numberpad to javafx.fxml;
     opens toby.calculator.display.body.pad.operationpad to javafx.fxml;
 
     exports toby.calculator;
     exports toby.calculator.display.header;
-    exports toby.calculator.display.body;
     exports toby.calculator.display.body.pad.numberpad to spring.beans;
     exports toby.calculator.display.body.pad.operationpad to spring.beans;
-    exports toby.calculator.display.body.pad.inputlinepad to spring.beans;
+    exports toby.calculator.display.body.pad.expressionpad;
 }

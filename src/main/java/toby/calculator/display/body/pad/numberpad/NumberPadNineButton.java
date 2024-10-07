@@ -3,7 +3,7 @@ package toby.calculator.display.body.pad.numberpad;
 import javafx.event.ActionEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import toby.calculator.display.body.CalculatorInputLine;
+import toby.calculator.display.body.pad.expressionpad.ExpressionLine;
 import toby.calculator.display.body.pad.CalculatorSymbol;
 import toby.calculator.display.body.pad.PadButton;
 
@@ -14,9 +14,9 @@ import java.util.ResourceBundle;
 public class NumberPadNineButton extends PadButton
 {
     @Autowired
-    public NumberPadNineButton(final CalculatorInputLine calculatorInputLine)
+    public NumberPadNineButton(final ExpressionLine expressionLine)
     {
-        super(calculatorInputLine);
+        super(expressionLine);
     }
 
     @Override

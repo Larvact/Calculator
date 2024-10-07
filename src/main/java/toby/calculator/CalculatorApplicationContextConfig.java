@@ -3,17 +3,17 @@ package toby.calculator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import toby.calculator.display.body.CalculatorInputLine;
+import toby.calculator.display.body.pad.expressionpad.ExpressionLine;
 
 @Configuration
 @ComponentScan
 public class CalculatorApplicationContextConfig
 {
     @Bean
-    CalculatorInputLine calculatorInputLine()
+    ExpressionLine calculatorInputLine()
     {
-        final var calculatorInputLine = new CalculatorInputLine();
-        return calculatorInputLine;
+        final var expressionLine = new ExpressionLine();
+        return expressionLine;
     }
 /*
     @Bean

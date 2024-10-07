@@ -4,17 +4,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import toby.calculator.display.body.CalculatorInputLine;
+import toby.calculator.display.body.pad.expressionpad.ExpressionLine;
 
 public abstract class PadButton implements Initializable
 {
     @FXML
     protected Button button;
-    protected final CalculatorInputLine calculatorInputLine;
+    protected final ExpressionLine expressionLine;
 
-    public PadButton(final CalculatorInputLine calculatorInputLine)
+    public PadButton(final ExpressionLine expressionLine)
     {
-        this.calculatorInputLine = calculatorInputLine;
+        this.expressionLine = expressionLine;
     }
 
     @FXML
@@ -22,7 +22,7 @@ public abstract class PadButton implements Initializable
 
     protected void inputSymbol(final String symbol)
     {
-        final var newExpression = calculatorInputLine.getCalculatorInputLine().getText() + symbol;
-        calculatorInputLine.getCalculatorInputLine().setText(newExpression);
+        final var newExpression = expressionLine.getExpressionLine().getText() + symbol;
+        expressionLine.getExpressionLine().setText(newExpression);
     }
 }
