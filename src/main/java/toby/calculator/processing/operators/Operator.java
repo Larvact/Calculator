@@ -1,4 +1,4 @@
-package toby.calculator.operators;
+package toby.calculator.processing.operators;
 
 import java.math.BigDecimal;
 
