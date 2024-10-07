@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import toby.calculator.display.body.pad.expressionpad.ExpressionLine;
@@ -33,5 +35,8 @@ public class CopyButton implements Initializable
     @FXML
     public void copy(final ActionEvent event)
     {
+        final var content = new ClipboardContent();
+        content.putString(expressionLine.getExpressionLine().getText());
+        Clipboard.getSystemClipboard().setContent(content);
     }
 }
