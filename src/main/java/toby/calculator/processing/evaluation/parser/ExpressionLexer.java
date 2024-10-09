@@ -1,4 +1,4 @@
-// Generated from toby/calculator/processing/evaluation/parser/ExpressionParser.g4 by ANTLR 4.13.2
+// Generated from toby/calculator/processing/evaluation/parser/Expression.g4 by ANTLR 4.13.2
 package toby.calculator.processing.evaluation.parser;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
@@ -10,14 +10,14 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue", "this-escape"})
-public class ExpressionParserLexer extends Lexer {
+public class ExpressionLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.13.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, MUL=4, DIV=5, ADD=6, SUB=7, ID=8, INT=9, NEWLINE=10, 
+		T__0=1, T__1=2, T__2=3, MULT=4, DIV=5, ADD=6, SUB=7, ID=8, INT=9, NEWLINE=10, 
 		WS=11;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
@@ -29,7 +29,7 @@ public class ExpressionParserLexer extends Lexer {
 
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"T__0", "T__1", "T__2", "MUL", "DIV", "ADD", "SUB", "ID", "INT", "NEWLINE", 
+			"T__0", "T__1", "T__2", "MULT", "DIV", "ADD", "SUB", "ID", "INT", "NEWLINE", 
 			"WS"
 		};
 	}
@@ -37,13 +37,13 @@ public class ExpressionParserLexer extends Lexer {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'='", "'('", "')'", "'*'", "'/'", "'+'", "'-'"
+			null, "'='", "'('", "')'", "'\\u00D7'", "'\\u00F7'", "'+'", "'-'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, "MUL", "DIV", "ADD", "SUB", "ID", "INT", "NEWLINE", 
+			null, null, null, null, "MULT", "DIV", "ADD", "SUB", "ID", "INT", "NEWLINE", 
 			"WS"
 		};
 	}
@@ -82,13 +82,13 @@ public class ExpressionParserLexer extends Lexer {
 	}
 
 
-	public ExpressionParserLexer(CharStream input) {
+	public ExpressionLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "ExpressionParser.g4"; }
+	public String getGrammarFileName() { return "Expression.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -130,20 +130,20 @@ public class ExpressionParserLexer extends Lexer {
 		"\u0001\u0000\u0000\u0000\u00155\u0001\u0000\u0000\u0000\u0017\u0018\u0005"+
 		"=\u0000\u0000\u0018\u0002\u0001\u0000\u0000\u0000\u0019\u001a\u0005(\u0000"+
 		"\u0000\u001a\u0004\u0001\u0000\u0000\u0000\u001b\u001c\u0005)\u0000\u0000"+
-		"\u001c\u0006\u0001\u0000\u0000\u0000\u001d\u001e\u0005*\u0000\u0000\u001e"+
-		"\b\u0001\u0000\u0000\u0000\u001f \u0005/\u0000\u0000 \n\u0001\u0000\u0000"+
-		"\u0000!\"\u0005+\u0000\u0000\"\f\u0001\u0000\u0000\u0000#$\u0005-\u0000"+
-		"\u0000$\u000e\u0001\u0000\u0000\u0000%\'\u0007\u0000\u0000\u0000&%\u0001"+
-		"\u0000\u0000\u0000\'(\u0001\u0000\u0000\u0000(&\u0001\u0000\u0000\u0000"+
-		"()\u0001\u0000\u0000\u0000)\u0010\u0001\u0000\u0000\u0000*,\u0007\u0001"+
-		"\u0000\u0000+*\u0001\u0000\u0000\u0000,-\u0001\u0000\u0000\u0000-+\u0001"+
-		"\u0000\u0000\u0000-.\u0001\u0000\u0000\u0000.\u0012\u0001\u0000\u0000"+
-		"\u0000/1\u0005\r\u0000\u00000/\u0001\u0000\u0000\u000001\u0001\u0000\u0000"+
-		"\u000012\u0001\u0000\u0000\u000023\u0005\n\u0000\u00003\u0014\u0001\u0000"+
-		"\u0000\u000046\u0007\u0002\u0000\u000054\u0001\u0000\u0000\u000067\u0001"+
-		"\u0000\u0000\u000075\u0001\u0000\u0000\u000078\u0001\u0000\u0000\u0000"+
-		"89\u0001\u0000\u0000\u00009:\u0006\n\u0000\u0000:\u0016\u0001\u0000\u0000"+
-		"\u0000\u0005\u0000(-07\u0001\u0006\u0000\u0000";
+		"\u001c\u0006\u0001\u0000\u0000\u0000\u001d\u001e\u0005\u00d7\u0000\u0000"+
+		"\u001e\b\u0001\u0000\u0000\u0000\u001f \u0005\u00f7\u0000\u0000 \n\u0001"+
+		"\u0000\u0000\u0000!\"\u0005+\u0000\u0000\"\f\u0001\u0000\u0000\u0000#"+
+		"$\u0005-\u0000\u0000$\u000e\u0001\u0000\u0000\u0000%\'\u0007\u0000\u0000"+
+		"\u0000&%\u0001\u0000\u0000\u0000\'(\u0001\u0000\u0000\u0000(&\u0001\u0000"+
+		"\u0000\u0000()\u0001\u0000\u0000\u0000)\u0010\u0001\u0000\u0000\u0000"+
+		"*,\u0007\u0001\u0000\u0000+*\u0001\u0000\u0000\u0000,-\u0001\u0000\u0000"+
+		"\u0000-+\u0001\u0000\u0000\u0000-.\u0001\u0000\u0000\u0000.\u0012\u0001"+
+		"\u0000\u0000\u0000/1\u0005\r\u0000\u00000/\u0001\u0000\u0000\u000001\u0001"+
+		"\u0000\u0000\u000012\u0001\u0000\u0000\u000023\u0005\n\u0000\u00003\u0014"+
+		"\u0001\u0000\u0000\u000046\u0007\u0002\u0000\u000054\u0001\u0000\u0000"+
+		"\u000067\u0001\u0000\u0000\u000075\u0001\u0000\u0000\u000078\u0001\u0000"+
+		"\u0000\u000089\u0001\u0000\u0000\u00009:\u0006\n\u0000\u0000:\u0016\u0001"+
+		"\u0000\u0000\u0000\u0005\u0000(-07\u0001\u0006\u0000\u0000";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

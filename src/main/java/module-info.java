@@ -24,5 +24,7 @@ module Calculator
     exports toby.calculator.display.header;
     exports toby.calculator.display.body.pad.numberpad to spring.beans;
     exports toby.calculator.display.body.pad.operationpad to spring.beans;
+    exports toby.calculator.processing.evaluation.parser to spring.beans;
+    exports toby.calculator.processing.operators to spring.beans;
     exports toby.calculator.display.body.pad.expressionpad;
 }
