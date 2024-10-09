@@ -17,26 +17,12 @@ public interface ExpressionVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProg(ExpressionParser.ProgContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code printExpr}
+	 * Visit a parse tree produced by the {@code calcExpr}
 	 * labeled alternative in {@link ExpressionParser#stat}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrintExpr(ExpressionParser.PrintExprContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code assign}
-	 * labeled alternative in {@link ExpressionParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAssign(ExpressionParser.AssignContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code blank}
-	 * labeled alternative in {@link ExpressionParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBlank(ExpressionParser.BlankContext ctx);
+	T visitCalcExpr(ExpressionParser.CalcExprContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Div}
 	 * labeled alternative in {@link ExpressionParser#expr}.
