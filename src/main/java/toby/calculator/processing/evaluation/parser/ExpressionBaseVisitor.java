@@ -67,12 +67,12 @@ public class ExpressionBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitNum(ExpressionParser.NumContext ctx) { return visitChildren(ctx); }
+	@Override public T visitNegate(ExpressionParser.NegateContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitId(ExpressionParser.IdContext ctx) { return visitChildren(ctx); }
+	@Override public T visitNum(ExpressionParser.NumContext ctx) { return visitChildren(ctx); }
 }

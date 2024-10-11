@@ -59,17 +59,17 @@ public interface ExpressionVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMult(ExpressionParser.MultContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code negate}
+	 * labeled alternative in {@link ExpressionParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNegate(ExpressionParser.NegateContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code num}
 	 * labeled alternative in {@link ExpressionParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitNum(ExpressionParser.NumContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code id}
-	 * labeled alternative in {@link ExpressionParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitId(ExpressionParser.IdContext ctx);
 }
