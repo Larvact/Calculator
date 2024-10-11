@@ -44,6 +44,12 @@ public class ExpressionParserVisitor extends ExpressionBaseVisitor<BigDecimal>
     }
 
     @Override
+    public BigDecimal visitNegate(final ExpressionParser.NegateContext ctx)
+    {
+        return new BigDecimal(ctx.getText());
+    }
+
+    @Override
     public BigDecimal visitMult(final ExpressionParser.MultContext ctx)
     {
         var left = visit(ctx.expr(0));
