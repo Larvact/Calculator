@@ -8,7 +8,7 @@ expr:   expr op='×' expr      # Mult
     |   expr op='÷' expr      # Div
     |   expr op='+' expr      # Add
     |   expr op='-' expr      # Sub
-    |   INT                   # int
+    |   NUMBER                # num
     |   ID                    # id
     |   '(' expr ')'          # parens
     ;
@@ -18,4 +18,4 @@ DIV :   '÷' ;
 ADD :   '+' ;
 SUB :   '-' ;
 ID  :   [a-zA-Z]+ ;
-INT :   [0-9]+ ;
+NUMBER :  '-'? [0-9]+ ('.' [0-9]+)?;

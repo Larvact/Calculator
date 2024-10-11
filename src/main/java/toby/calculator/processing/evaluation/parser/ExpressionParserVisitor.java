@@ -38,9 +38,9 @@ public class ExpressionParserVisitor extends ExpressionBaseVisitor<BigDecimal>
     }
 
     @Override
-    public BigDecimal visitInt(final ExpressionParser.IntContext ctx)
+    public BigDecimal visitNum(final ExpressionParser.NumContext ctx)
     {
-        return new BigDecimal(ctx.INT().getText());
+        return new BigDecimal(ctx.NUMBER().getText());
     }
 
     @Override
