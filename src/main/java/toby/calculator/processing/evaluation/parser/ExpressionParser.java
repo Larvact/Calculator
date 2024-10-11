@@ -17,7 +17,7 @@ public class ExpressionParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, MULT=3, DIV=4, ADD=5, SUB=6, ID=7, INT=8;
+		T__0=1, T__1=2, MULT=3, DIV=4, ADD=5, SUB=6, ID=7, NUMBER=8;
 	public static final int
 		RULE_prog = 0, RULE_stat = 1, RULE_expr = 2;
 	private static String[] makeRuleNames() {
@@ -35,7 +35,7 @@ public class ExpressionParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, "MULT", "DIV", "ADD", "SUB", "ID", "INT"
+			null, null, null, "MULT", "DIV", "ADD", "SUB", "ID", "NUMBER"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -282,22 +282,22 @@ public class ExpressionParser extends Parser {
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
+	public static class NumContext extends ExprContext {
+		public TerminalNode NUMBER() { return getToken(ExpressionParser.NUMBER, 0); }
+		public NumContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExpressionVisitor ) return ((ExpressionVisitor<? extends T>)visitor).visitNum(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class IdContext extends ExprContext {
 		public TerminalNode ID() { return getToken(ExpressionParser.ID, 0); }
 		public IdContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof ExpressionVisitor ) return ((ExpressionVisitor<? extends T>)visitor).visitId(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class IntContext extends ExprContext {
-		public TerminalNode INT() { return getToken(ExpressionParser.INT, 0); }
-		public IntContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpressionVisitor ) return ((ExpressionVisitor<? extends T>)visitor).visitInt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -320,14 +320,14 @@ public class ExpressionParser extends Parser {
 			setState(20);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case INT:
+			case NUMBER:
 				{
-				_localctx = new IntContext(_localctx);
+				_localctx = new NumContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
 				setState(14);
-				match(INT);
+				match(NUMBER);
 				}
 				break;
 			case ID:
