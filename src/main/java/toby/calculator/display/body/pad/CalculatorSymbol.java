@@ -18,6 +18,7 @@ public enum CalculatorSymbol
     SEVEN("7"),
     EIGHT("8"),
     NINE("9"),
+    CLEAR_ALL("AC"),
     EQUALS("="),
     ADD("+"),
     SUBTRACT("-"),
