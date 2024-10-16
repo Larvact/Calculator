@@ -32,6 +32,13 @@
                 </HBox>
             </VBox>
             <FlowPane maxWidth="-Infinity" minWidth="600" hgap="%standardSpacing" vgap="%standardSpacing"
+                      alignment="BASELINE_LEFT" >
+                <padding>
+                    <Insets top="%standardSpacing" left="50"/>
+                </padding>
+                <fx:include source="body/expressionpad/clearAllButton.fxml"/>
+            </FlowPane>
+            <FlowPane maxWidth="-Infinity" minWidth="600" hgap="%standardSpacing" vgap="%standardSpacing"
                       alignment="BASELINE_LEFT" orientation="VERTICAL">
                 <padding>
                     <Insets top="%standardSpacing" left="50"/>
