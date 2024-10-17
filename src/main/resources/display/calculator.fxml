@@ -37,6 +37,7 @@
                     <Insets top="%standardSpacing" left="50"/>
                 </padding>
                 <fx:include source="body/expressionpad/clearAllButton.fxml"/>
+                <fx:include source="body/expressionpad/backspaceButton.fxml"/>
             </FlowPane>
             <FlowPane maxWidth="-Infinity" minWidth="600" hgap="%standardSpacing" vgap="%standardSpacing"
                       alignment="BASELINE_LEFT" orientation="VERTICAL">

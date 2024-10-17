@@ -12,30 +12,30 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 @Component
-public class ExpressionPadClearAllButton implements Initializable
+public class ExpressionPadBackspaceButton implements Initializable
 {
     @FXML
     private Button button;
     private final ExpressionLine expressionLine;
-    private final ResultLine resultLine;
 
     @Autowired
-    public ExpressionPadClearAllButton(final ExpressionLine expressionLine,
-                                     final ResultLine resultLine)
+    public ExpressionPadBackspaceButton(final ExpressionLine expressionLine)
     {
         this.expressionLine = expressionLine;
-        this.resultLine = resultLine;
     }
 
     @Override
     public void initialize(final URL url, final ResourceBundle resourceBundle)
     {
-        button.setText(CalculatorSymbol.CLEAR_ALL.getSymbolDisplay());
+        button.setText(CalculatorSymbol.BACKSPACE.getSymbolDisplay());
     }
 
-    public void clearAll(final ActionEvent event)
+    public void backspace(final ActionEvent event)
     {
-        expressionLine.getExpressionLine().setText("");
-        resultLine.getExpressionResult().setText("");
+        final var currentExpression = expressionLine.getExpressionLine().getText();
+        if (!currentExpression.isEmpty())
+        {
+            expressionLine.getExpressionLine().setText(currentExpression.substring(0, currentExpression.length() - 1));
+        }
     }
 }
