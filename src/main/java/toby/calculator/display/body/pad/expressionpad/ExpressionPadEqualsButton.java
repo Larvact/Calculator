@@ -23,6 +23,8 @@ import java.util.ResourceBundle;
 @Component
 public class ExpressionPadEqualsButton implements Initializable
 {
+    private static final String SYNTAX_ERROR_DISPLAY = "Syntax Error";
+
     @FXML
     private Button button;
     private final ExpressionLine expressionLine;
@@ -48,11 +50,18 @@ public class ExpressionPadEqualsButton implements Initializable
     public void calculate(final ActionEvent event) throws IOException
     {
         final InputStream inputStream = new ByteArrayInputStream(expressionLine.getExpressionLine().getText().getBytes());
-        ExpressionLexer lexer = new ExpressionLexer(CharStreams.fromStream(inputStream));
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        ExpressionParser parser = new ExpressionParser(tokens);
-        ParseTree tree = parser.prog();
-        final var result = expressionParserVisitor.visit(tree);
-        resultLine.getExpressionResult().setText(result.toPlainString());
+        final var lexer = new ExpressionLexer(CharStreams.fromStream(inputStream));
+        final var tokens = new CommonTokenStream(lexer);
+        final var parser = new ExpressionParser(tokens);
+        final var tree = parser.prog();
+        try
+        {
+            final var result = expressionParserVisitor.visit(tree);
+            resultLine.getExpressionResult().setText(result.toPlainString());
+        }
+        catch (Exception e)
+        {
+            resultLine.getExpressionResult().setText(SYNTAX_ERROR_DISPLAY);
+        }
     }
 }
